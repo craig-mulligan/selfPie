@@ -49,4 +49,5 @@ function selfie(){
 	camera.start();
 	console.log('camera');
 }
+
 selfie();

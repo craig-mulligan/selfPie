@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "bash deps.sh",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "*"
