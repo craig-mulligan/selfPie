@@ -14,7 +14,7 @@ app.get("/send", function(request, response){
     console.log("State " + queryData + " received.");
 
     // Apply command
-    if (queryData.state == true) {
+    if (state == true) {
         selfie(); 
         console.log("lamp: ON");
     }
