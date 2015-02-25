@@ -1,6 +1,7 @@
 var express = require('express');
 var RaspiCam = require("raspicam");
 var url = require('url');
+
 var app = express();
 
 app.use(express.static(__dirname + '/static'));
@@ -10,7 +11,7 @@ app.listen(process.env.PORT || 8080);
 app.get("/send", function(request, response){
     // Get data
     var queryData = url.parse(request.url, true).query;
-    console.log("State " + queryData.state + " received.");
+    console.log("State " + queryData + " received.");
 
     // Apply command
     if (queryData.state == true) {
