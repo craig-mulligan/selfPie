@@ -6,7 +6,7 @@ var app = express();
 
 app.use(express.static(__dirname + '/static'));
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080);
 
 app.get("/send", function(request, response){
     // Get data
