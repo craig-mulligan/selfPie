@@ -22,7 +22,6 @@ app.get("/send", function(request, response){
 	    url: "image.jpg",
 	});
     // Answer
-    response.writeHead(200, {'Content-Type', 'application/json'});
     response.end(img);
 });
 
