@@ -36,10 +36,13 @@ function selfie(){
 		ncp('../data/image.jpg', 'static/image.jpg', function (err) {
 		 if (err) {
 		   return console.error(err);
+		 } else {
+		 	camera.stop();
+		 	console.log('done!');
 		 }
-		 console.log('done!');
+		 
 		});
-		camera.stop();
+		
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
