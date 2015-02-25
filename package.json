@@ -4,7 +4,8 @@
   "description": "Use resin.io to take photo with your girls",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "preinstall": "bash deps.sh",
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "*"
