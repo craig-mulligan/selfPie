@@ -20,7 +20,7 @@ app.get("/send", function(request, response){
     }
     // Answer
     response.sendfile('../data/image.jpg');
-    
+    response.end();
 });
 
 function selfie(){
