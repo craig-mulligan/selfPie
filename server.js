@@ -7,6 +7,7 @@ var app = express();
 app.use(express.static(__dirname + '/static'));
 
 app.listen(process.env.PORT || 8080);
+console.log("Listening on port " + 8080);
 
 function selfie(){
 	var camera = new RaspiCam({
@@ -39,7 +40,7 @@ app.get("/send", function(request, response){
     console.log("State " + queryData.pic + " received.");
 
     // Apply command
-    if (queryData.pic == true) {
+    if (queryData.pic == 'true') {
     	console.log("lamp: ON");
         selfie();    
     }
