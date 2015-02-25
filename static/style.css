@@ -40,3 +40,7 @@ body {
   -webkit-transform: translateY(10px);
   transform: translateY(10px);
 }
+
+.img {
+  background-image: url('../../data/image.jpg');
+}

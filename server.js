@@ -4,6 +4,7 @@ var url = require('url');
 
 var app = express();
 
+app.use(express.static(__dirname + '../data/'));
 app.use(express.static(__dirname + '/static'));
 
 app.listen(8080);
@@ -19,7 +20,6 @@ app.get("/send", function(request, response){
     }
     // Answer
     response.sendfile('../data/image.jpg');
-    response.end();
     
 });
 
