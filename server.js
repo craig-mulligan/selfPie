@@ -23,12 +23,13 @@ app.get("/send", function(request, response){
 	});
     // Answer
     response.end(img);
+    response.sendfile('/static/image.jpg');
 });
 
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
-	output: "/static/image.jpg",
+	output: "static/image.jpg",
 	encoding: "jpg",
 	timeout: 100, 
 	});
