@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "raspicam": "~0.2.13",
-    "express": "*",
+    "express": "*"
   }
 }
