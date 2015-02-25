@@ -2,34 +2,35 @@ var express = require('express');
 var RaspiCam = require("raspicam");
 var url = require('url');
 
-// var app = express();
+var app = express();
 
-// app.use(express.static(__dirname + '/static'));
+app.use(express.static(__dirname + '/static'));
 
-// app.listen(8080);
+app.listen(8080);
 
-// app.get("/send", function(request, response){
-//     // Get data
-//     var queryData = url.parse(request.url, true).query;
-//     console.log("State " + queryData.pic + " received.");
+app.get("/send", function(request, response){
+    // Get data
+    var queryData = url.parse(request.url, true).query;
+    console.log("State " + queryData.pic + " received.");
 
-//     // Apply command
-//     if (queryData.pic == 'true') {
-//         console.log("lamp: ON");
-//     }
+    // Apply command
+    if (queryData.pic == 'true') {
+        console.log("lamp: ON");
+        selfie();
+    }
 
-//     response = selfie();
-//     // Answer
-//     // response.writeHead(200, {"Content-Type": "text/html"});
-//     response.end();
-// });
+    // response = selfie();
+    // Answer
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.end();
+});
 
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
 	output: "../data/image.jpg",
 	encoding: "jpg",
-	timeout: 100 
+	timeout: 100, 
 	});
 
 	camera.on("started", function( err, timestamp ){
@@ -49,5 +50,3 @@ function selfie(){
 	camera.start();
 	console.log('camera');
 }
-
-selfie();
