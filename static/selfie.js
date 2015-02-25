@@ -5,7 +5,7 @@ function  takePic() {
       async: false,
       data: {pic: true},
       success: function( data ) {
-        $('.image-container img').fadeOut();
+        $('.image-container img').remove();
         $('.image-container').html("<img src='image.jpg'>");
         console.log(data)
       }
