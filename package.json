@@ -1,14 +1,18 @@
 {
-  "name": "basic-resin-node-project",
+  "name": "selfie",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use resin.io to take photo with your girls",
   "main": "index.js",
   "scripts": {
-    "preinstall": "bash deps.sh",
-    "start": "node hello.js"
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*"
   },
   "author": "Lorenzo Stoakes <lstoakes@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "raspicam": "~0.2.13",
+    "express": "*"
   }
 }
