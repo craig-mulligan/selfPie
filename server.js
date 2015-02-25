@@ -29,7 +29,7 @@ app.get("/send", function(request, response){
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
-	output: "image.jpg",
+	output: "/static/image.jpg",
 	encoding: "jpg",
 	timeout: 100, 
 	});
