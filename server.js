@@ -17,14 +17,13 @@ app.get("/send", function(request, response){
     // take picture
     if (queryData.pic == 'true') {
        	selfie();
-       	var img = fs.readFileSync('../data/logo.jpg');
-	    res.writeHead(200, {'Content-Type': 'image/jpg' });
-	    res.end(img, 'binary');
+       	var img = fs.readFileSync('../data/image.jpg');
+	    response.writeHead(200, {'Content-Type': 'image/jpg' });
+	    response.end(img, 'binary');
     } else {
     	response.end();
     }
     // Answer
-    
 });
 
 function selfie(){
