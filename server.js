@@ -17,9 +17,9 @@ app.get("/send", function(request, response){
     // take picture
     if (queryData.pic == 'true') {
        	selfie();
-       	var img = fs.readFileSync('../data/image.jpg');
-	    response.writeHead(200, {'Content-Type': 'image/jpeg' });
-	    response.end(img, 'binary');
+       	// var img = fs.readFileSync('../data/image.jpg');
+	    response.sendfile('../data/image.jpg');
+	    response.end();
     } else {
     	response.end();
     }
