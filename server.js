@@ -27,7 +27,7 @@ function selfie(){
 	timeout: 10, 
 	});
 
-	camera.on("started", function( err, timestamp ){
+	camera.on("start", function( err, timestamp ){
 		console.log("photo started at " + timestamp );
 	});
 
@@ -39,7 +39,7 @@ function selfie(){
 		 }
 		 console.log('done!');
 		});
-		RaspiCam.stop();
+		camera.stop();
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
