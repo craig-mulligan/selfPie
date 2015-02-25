@@ -33,7 +33,7 @@ function selfie(){
 
 	camera.on("read", function( err, timestamp, filename ){
 		console.log("photo image captured with filename: " + filename );
-		ncp('../data/' + filename, 'static/image.jpg', function (err) {
+		ncp('../data/image.jpg', 'static/image.jpg', function (err) {
 		 if (err) {
 		   return console.error(err);
 		 }
