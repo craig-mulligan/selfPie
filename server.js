@@ -7,7 +7,23 @@ var app = express();
 app.use(express.static(__dirname + '/static'));
 
 app.listen(process.env.PORT || 8080);
-console.log("Listening on port " + 8080);
+
+app.get("/send", function(request, response){
+    // Get data
+    var queryData = url.parse(request.url, true).query;
+    console.log("State " + queryData.pic + " received.");
+
+    // Apply command
+    if (queryData.pic == 'true') {
+        selfie(); 
+        console.log("lamp: ON");
+    }
+    // Answer
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.end();
+});
+
+
 
 function selfie(){
 	var camera = new RaspiCam({
@@ -33,19 +49,3 @@ function selfie(){
 
 	camera.start();
 }
-
-app.get("/send", function(request, response){
-    // Get data
-    var queryData = url.parse(request.url, true).query;
-    console.log("State " + queryData.pic + " received.");
-
-    // Apply command
-    if (queryData.pic == 'true') {
-    	console.log("lamp: ON");
-        selfie();    
-    }
-});
-
-
-
-
