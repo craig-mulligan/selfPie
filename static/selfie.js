@@ -1,4 +1,4 @@
-function function_name (argument) {
+function  takePic() {
 	$.ajax({
       type: 'GET',
       url: '/send',
