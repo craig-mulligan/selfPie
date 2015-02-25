@@ -18,8 +18,9 @@ app.get("/send", function(request, response){
     if (queryData.pic == 'true') {
        	selfie();
        	// var img = fs.readFileSync('../data/image.jpg');
-	    response.sendfile('../data/image.jpg');
-	    response.end();
+	    res = response.sendfile('../data/image.jpg');
+	    console.log(res);
+	    response.end("hello!");
     } else {
     	response.end();
     }
@@ -34,19 +35,19 @@ function selfie(){
 	timeout: 10, 
 	});
 
-	camera.on("started", function( err, timestamp ){
-		console.log("photo started at " + timestamp );
-	});
+	// camera.on("started", function( err, timestamp ){
+	// 	console.log("photo started at " + timestamp );
+	// });
 
 
-	camera.on("read", function( err, timestamp, filename ){
-		console.log("photo image captured with filename: " + filename );
-		//we can now do stuff with the captured image, which is stored in /data
-	});
+	// camera.on("read", function( err, timestamp, filename ){
+	// 	console.log("photo image captured with filename: " + filename );
+	// 	//we can now do stuff with the captured image, which is stored in /data
+	// });
 
-	camera.on("exit", function( timestamp ){
-		console.log("photo child process has exited at " + timestamp );
-	});
+	// camera.on("exit", function( timestamp ){
+	// 	console.log("photo child process has exited at " + timestamp );
+	// });
 
 	camera.start();
 	console.log('camera');
