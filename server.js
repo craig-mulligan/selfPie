@@ -18,8 +18,12 @@ app.get("/send", function(request, response){
     if (queryData.pic == 'true') {
        	selfie();
        	// var img = fs.readFileSync('../data/image.jpg');
-	    res = response.sendfile('../data/image.jpg');
+	    res = response.sendFile('../data/image.jpg');
 	    console.log(res);
+	    response.setHeader("Content-Type", "text/json");
+	    response.write("{
+  'Content-Length': body.length,
+  'Content-Type': 'text/plain' }")
 	    response.end("hello!");
     } else {
     	response.end();
