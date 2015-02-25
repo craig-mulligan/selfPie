@@ -18,17 +18,18 @@ app.get("/send", function(request, response){
         console.log("lamp: ON");
         selfie();
     }
-
-    // response = selfie();
+    var img = JSON.stringify({ 
+	    url: "image.jpg",
+	});
     // Answer
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.end();
+    response.writeHead(200, {'Content-Type', 'application/json'});
+    response.end(img);
 });
 
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
-	output: "../data/image.jpg",
+	output: "image.jpg",
 	encoding: "jpg",
 	timeout: 100, 
 	});
