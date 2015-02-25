@@ -11,27 +11,24 @@ app.listen(8080);
 app.get("/send", function(request, response){
     // Get data
     var queryData = url.parse(request.url, true).query;
-    console.log("State " + queryData.pic + " received.");
+    console.log(queryData.pic);
 
-    // Apply command
+    // take picture
     if (queryData.pic == 'true') {
-        console.log("lamp: ON");
-        selfie();
+       	selfie();
     }
-    var img = JSON.stringify({ 
-	    url: "image.jpg",
-	});
     // Answer
-    response.end(img);
-    response.sendfile('/static/image.jpg');
+    response.sendfile('../data/image.jpg');
+    response.end();
+    
 });
 
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
-	output: "static/image.jpg",
+	output: "../data/image.jpg",
 	encoding: "jpg",
-	timeout: 100, 
+	timeout: 10, 
 	});
 
 	camera.on("started", function( err, timestamp ){

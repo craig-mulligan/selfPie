@@ -6,6 +6,8 @@ function  takePic() {
       data: {pic: true},
       success: function( data ) {
         json_data = jQuery.parseJSON(data);
+        console.log(data);
+        console.log(json_data);
       }
 	});  
 }
