@@ -1,10 +1,10 @@
 var express = require('express');
 var RaspiCam = require("raspicam");
 var url = require('url');
+var fs = require('fs');
 
 var app = express();
 
-app.use(express.static(__dirname + '../data/'));
 app.use(express.static(__dirname + '/static'));
 
 app.listen(8080);
@@ -17,10 +17,14 @@ app.get("/send", function(request, response){
     // take picture
     if (queryData.pic == 'true') {
        	selfie();
+       	var img = fs.readFileSync('../data/logo.jpg');
+	    res.writeHead(200, {'Content-Type': 'image/jpg' });
+	    res.end(img, 'binary');
+    } else {
+    	response.end();
     }
     // Answer
-    response.sendfile('../data/image.jpg');
-    response.end();
+    
 });
 
 function selfie(){
