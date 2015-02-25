@@ -11,10 +11,10 @@ app.listen(process.env.PORT || 8080);
 app.get("/send", function(request, response){
     // Get data
     var queryData = url.parse(request.url, true).query;
-    console.log("State " + queryData + " received.");
+    console.log("State " + queryData.pic + " received.");
 
     // Apply command
-    if (state == true) {
+    if (queryData.pic == true) {
         selfie(); 
         console.log("lamp: ON");
     }
