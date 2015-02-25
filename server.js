@@ -1,6 +1,6 @@
 var express = require('express');
 var RaspiCam = require("raspicam");
-
+var url = require('url');
 var app = express();
 
 app.use(express.static(__dirname + '/static'));
