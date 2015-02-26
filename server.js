@@ -1,11 +1,9 @@
 var express = require('express');
 var RaspiCam = require("raspicam");
-var url = require('url');
-var fs = require('fs');
-var ncp = require('ncp').ncp;
+var express = require('express');
+var Dropbox = require("dropbox");
+var fs = require("fs");
  
-ncp.limit = 16;
-
 var app = express();
 
 app.use(express.static(__dirname + '/static'));
@@ -13,11 +11,31 @@ app.use(express.static(__dirname + '/static'));
 app.listen(8080);
 
 app.get("/send", function(request, response){
-       	selfie();
-	    response.setHeader('Content-Type', 'application/json');
-	    response.json({ 'url': 'image.jpg' })
-	    response.end();
+		selfie();
+       	response.end();
 });
+
+var client = new Dropbox.Client({
+    key: process.env.KEY,
+    secret: process.env.SECRET,
+    token: process.env.TOKEN
+});
+
+
+function upload(image, renamed){
+	fs.readFile(image, function(error, data) {
+  // No encoding passed, readFile produces a Buffer instance
+	  if (error) {
+	    return console.log(error);
+	  }
+	  client.writeFile(renamed, data, function(error, stat) {
+	    if (error) {
+	      return console.log(error);
+	    }
+	    // The image has been succesfully written.
+	  });
+	});
+}
 
 function selfie(){
 	var camera = new RaspiCam({
@@ -33,16 +51,8 @@ function selfie(){
 
 	camera.on("read", function( err, timestamp, filename ){
 		console.log("photo image captured with filename: " + filename );
-		ncp('../data/image.jpg', 'static/image.jpg', function (err) {
-			 if (err) {
-			   return console.error(err);
-			 } else {
-			 	camera.stop();
-			 	console.log('done!');
-			 }
-		 
-		});
-		
+		stamp = new Date().getTime();
+       	upload('image.jpg', "image-" + stamp + ".jpg");
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
