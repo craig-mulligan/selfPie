@@ -16,13 +16,13 @@ Here are the steps need to get it running on your raspberry pi.
 
 * And add your resin app's remote git endpoint and then push. 
 * 
-'''
+```
 $ git remote add resin git@git.resin.io:$USER/$APP.git
-'''
+```
 
-'''
+```
 $ git push resin master
-'''
+```
 
 * Navigate to actions tab of the device on the resin.io dashboard and enable your device url. It will then generate a url and your good to go! Selfies at the click of a big red button! 
 ![alt text](http://i.imgur.com/934CU7Q.png "Device Url").
