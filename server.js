@@ -51,13 +51,14 @@ function selfie(){
 
 	camera.on("read", function( err, timestamp, filename ){
 		console.log("photo image captured with filename: " + filename );
-		stamp = new Date().getTime();
-       	upload(filename, "image-" + stamp + ".jpg");
+		
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
 	camera.on("exit", function( timestamp ){
 		console.log("photo child process has exited at " + timestamp );
+		stamp = new Date().getTime();
+		upload("image.jpg", "image-" + stamp + ".jpg");
 	});
 
 	camera.start();
