@@ -10,7 +10,7 @@
   "dependencies": {
     "express": "*"
   },
-  "author": "Lorenzo Stoakes <lstoakes@gmail.com>",
+  "author": "Craig Mulligan",
   "license": "ISC",
   "dependencies": {
     "raspicam": "~0.2.13",
