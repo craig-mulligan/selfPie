@@ -40,7 +40,7 @@ function upload(image, renamed){
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
-	output: "../data/image.jpg",
+	output: "image.jpg",
 	encoding: "jpg",
 	timeout: 10, 
 	});
@@ -52,7 +52,7 @@ function selfie(){
 	camera.on("read", function( err, timestamp, filename ){
 		console.log("photo image captured with filename: " + filename );
 		stamp = new Date().getTime();
-       	upload('image.jpg', "image-" + stamp + ".jpg");
+       	upload(filename, "image-" + stamp + ".jpg");
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
