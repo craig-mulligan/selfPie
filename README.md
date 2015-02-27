@@ -10,7 +10,7 @@ Here are the steps need to get it running on your raspberry pi.
 2. signup with dropbox and create an app. 
 3. Create 3 enviroment variables on your resin.io dashboard corresponding to your dropbox app credentials.
 
-![alt text](https://github.com/craig-mulligan/selfPie/images/envars.png "Enviroment variables")
+![alt text](https://github.com/craig-mulligan/selfPie/blob/master/images/envars.png "Enviroment variables")
 
 KEY: $dropbox-app-key
 SECRET: $dropbox-app-secret
