@@ -15,7 +15,7 @@ Here are the steps need to get it running on your raspberry pi.
 * Clone this repo. 
 
 * And add your resin app's remote git endpoint and then push. 
-* 
+
 ```
 $ git remote add resin git@git.resin.io:$USER/$APP.git
 ```
