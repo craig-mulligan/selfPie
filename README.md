@@ -12,9 +12,9 @@ Here are the steps need to get it running on your raspberry pi.
 
 ![alt text](https://github.com/craig-mulligan/selfPie/blob/master/images/envars.png "Enviroment variables")
 
-KEY: $dropbox-app-key
-SECRET: $dropbox-app-secret
-TOKEN: $Dropbox-app-token
+* KEY: $dropbox-app-key
+* SECRET: $dropbox-app-secret
+* TOKEN: $Dropbox-app-token
 
 4. Clone this repo. 
 
