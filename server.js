@@ -42,6 +42,7 @@ function selfie(){
 	mode: "photo",
 	output: "image.jpg",
 	encoding: "jpg",
+	timeout: 1, 
 	});
 
 	camera.on("start", function( err, timestamp ){
