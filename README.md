@@ -1,4 +1,4 @@
-# Basic Resin.io Node.js Project
+# Selfie app with resin.io's new device urls
 
 This sets up an express server on your raspberry pi with resin.io's new device urls. 
 
