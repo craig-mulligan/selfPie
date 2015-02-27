@@ -42,7 +42,7 @@ function selfie(){
 	mode: "photo",
 	output: "image.jpg",
 	encoding: "jpg",
-	timeout: 10, 
+	timeout: 100, 
 	});
 
 	camera.on("start", function( err, timestamp ){
@@ -53,6 +53,7 @@ function selfie(){
 		console.log("photo image captured with filename: " + filename );
 		stamp = new Date().getTime();
        	upload(filename, "image-" + stamp + ".jpg");
+       	camera.stop();
 		//we can now do stuff with the captured image, which is stored in /data
 	});
 
