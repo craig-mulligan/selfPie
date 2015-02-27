@@ -5,12 +5,7 @@ function  takePic() {
       async: false,
       data: {pic: true},
       success: function( data ) {
-        $(".container").html('<a href="#" class="btn-big-red" onclick="takePic()"></a>');
+        console.log("great success!");
       }
   });  
-}
-
-function loop() {
-  $(".body").html();
-  $(".body").toggleClass("active");
 }
