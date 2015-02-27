@@ -1,27 +1,32 @@
-var express = require('express');
 var RaspiCam = require("raspicam");
 var express = require('express');
 var Dropbox = require("dropbox");
 var fs = require("fs");
- 
+
+// launch server on port 8080 
 var app = express();
 
 app.use(express.static(__dirname + '/static'));
 
 app.listen(8080);
 
-app.get("/send", function(request, response){
-		selfie();
-       	response.end();
-});
-
+// Setup dropbox client
 var client = new Dropbox.Client({
     key: process.env.KEY,
     secret: process.env.SECRET,
     token: process.env.TOKEN
 });
 
+// respond to button press
+app.get("/send", function(request, response){
+		// Take photo and upload to dropbox
+		selfie();
+       	response.end();
+});
 
+// upload file to dropbox
+// image = local file
+// rename = what to name the file on dropbox
 function upload(image, renamed){
 	fs.readFile(image, function(error, data) {
   // No encoding passed, readFile produces a Buffer instance
@@ -43,16 +48,6 @@ function selfie(){
 	output: "image.jpg",
 	encoding: "jpg",
 	timeout: 1, 
-	});
-
-	camera.on("start", function( err, timestamp ){
-		console.log("photo started at " + timestamp );
-	});
-
-	camera.on("read", function( err, timestamp, filename ){
-		console.log("photo image captured with filename: " + filename );
-		
-		//we can now do stuff with the captured image, which is stored in /data
 	});
 
 	camera.on("exit", function( timestamp ){
