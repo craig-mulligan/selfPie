@@ -4,6 +4,9 @@ This sets up an express server on your raspberry pi with resin.io's new device u
 
 It's very simple one page application. When you click the big red button an image is captured by the camera module and then uploaded to dropbox. 
 
+![alt text](http://i.imgur.com/adL1vbw.png "Selfie!")
+
+
 Here are the steps need to get it running on your raspberry pi.
 
 * signup with [resin.io](https://www.resin.io) & create an app. 
