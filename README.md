@@ -6,17 +6,17 @@ It's very simple one page application. When you click the big red button an imag
 
 Here are the steps need to get it running on your raspberry pi.
 
-1. signup with [resin.io](https://www.resin.io) & create an app. 
-2. signup with [dropbox](https://www.dropbox.com) and create an app. 
-3. Create 3 enviroment variables on your [resin.io](https://www.resin.io) dashboard corresponding to your dropbox app credentials.
+* signup with [resin.io](https://www.resin.io) & create an app. 
+* signup with [dropbox](https://www.dropbox.com) and create an app. 
+* Create 3 enviroment variables on your [resin.io](https://www.resin.io) dashboard corresponding to your dropbox app credentials.
 
-⋅⋅⋅![alt text](https://github.com/craig-mulligan/selfPie/blob/master/images/envars.png "Enviroment variables")
+![alt text](https://github.com/craig-mulligan/selfPie/blob/master/images/envars.png "Enviroment variables")
 
-4. Clone this repo. 
+* Clone this repo. 
 
-5. And you resin apps remote git endpoint and then push. 
+* And you resin apps remote git endpoint and then push. 
 
-6. Navigate to actions tab of the device on the resin.io dashboard and enable your device url. It will then generate a url and your good to go! Selfies at the click of a big red button! 
+* Navigate to actions tab of the device on the resin.io dashboard and enable your device url. It will then generate a url and your good to go! Selfies at the click of a big red button! 
 ![alt text](https://github.com/craig-mulligan/selfPie/blob/master/images/device-url.png "Device Url") 
 
 
