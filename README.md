@@ -32,6 +32,6 @@ $ git push resin master
 
 *Connect your PiCam module, as illustrated in the gif below. If you don't have a camera module, you can still push this repo & visit the device url. It will just throw an error when you click the big red button. 
 
-![alt text](http://i.imgur.com/zscAtP1.gif "Cam Module").
+![alt text](http://i.imgur.com/zscAtP1.gif "Cam Module")
 
 *Selfies at the click of a big red button!
