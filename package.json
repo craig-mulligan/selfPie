@@ -1,7 +1,7 @@
 {
   "name": "selfie",
   "version": "1.0.0",
-  "description": "Use resin.io to take photo with your girls",
+  "description": "Use resin.io to take photos with your girls",
   "main": "index.js",
   "scripts": {
     "preinstall": "bash deps.sh",
