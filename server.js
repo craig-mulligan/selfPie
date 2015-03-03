@@ -42,6 +42,7 @@ function upload(image, renamed){
 	});
 }
 
+// Takes a photo with PiCam and triggers fn upload on exit event.
 function selfie(){
 	var camera = new RaspiCam({
 	mode: "photo",
@@ -52,8 +53,7 @@ function selfie(){
 
 	camera.on("exit", function( timestamp ){
 		console.log("photo child process has exited at " + timestamp );
-		stamp = new Date().getTime();
-		upload("image.jpg", "image-" + stamp + ".jpg");
+		upload("image.jpg", "image-" + timestamp + ".jpg");
 	});
 
 	camera.start();
