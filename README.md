@@ -35,3 +35,6 @@ $ git push resin master
 ![alt text](http://i.imgur.com/zscAtP1.gif "Cam Module")
 
 * Selfies at the click of a big red button!
+
+![alt text](http://i.imgur.com/hhkMjlS.png "Cam Module")
+Your images will then be available from your dropbox. In Dropbox/apps/$APPNAME/photo-timestamp.jpg
